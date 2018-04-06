@@ -14,7 +14,7 @@ describe VendingMachine do
   end
 
   describe '#select_snack' do
-    it "Should allow me to make a selection" do
+    it "Should accept user selection" do
       expect { vendingmachine.select_snack(1) }.to output(mock_selection_response).to_stdout
     end
   end
@@ -23,9 +23,16 @@ describe VendingMachine do
     before do
     $stdin = StringIO.new("0.50")
     end
-    
+
     it "Should prompt user to insert money" do
+      vendingmachine.select_snack(1)
       expect { vendingmachine.insert_money }.to output("Insert Money here:").to_stdout
+    end
+  end
+
+  describe '#calculate_change' do
+    it "Should return correct change" do
+      expect(vendingmachine.calculate_change(2,1)).to eq "Your change: 1.50"
     end
   end
 end

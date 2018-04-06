@@ -1,5 +1,8 @@
 Vending-Machine Tech Test (Onfido)
 ==================
+[![Build Status](https://travis-ci.com/bpourian/vending-machine.svg?token=pbZE7sGYsn5RyUv9ZzzN&branch=master)]
+
+
 Design a vending machine using a programming language of your choice. The vending machine should perform as follows:
 
 Once an item is selected and the appropriate amount of money is inserted, the vending machine should return the correct product.

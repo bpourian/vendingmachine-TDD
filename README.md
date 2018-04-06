@@ -32,7 +32,12 @@ I would like to be able to make a selection
 ```
 As a User
 So that I can pay the correct amount
-I would like to see how much my selection costs
+I would like to see how much my snack costs
+```
+```
+As a User
+So that I can purchase my snack
+I would like to pay for my snack
 ```
 
 ```

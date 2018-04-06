@@ -18,4 +18,14 @@ describe VendingMachine do
       expect { vendingmachine.select_snack(1) }.to output(mock_selection_response).to_stdout
     end
   end
+
+  describe '#insert_money' do
+    before do
+    $stdin = StringIO.new("0.50")
+    end
+    
+    it "Should prompt user to insert money" do
+      expect { vendingmachine.insert_money }.to output("Insert Money here:").to_stdout
+    end
+  end
 end

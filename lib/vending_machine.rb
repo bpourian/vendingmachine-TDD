@@ -15,4 +15,10 @@ class VendingMachine
     " -- amount due: £#{sprintf('%.2f', @list_of_snacks[snack_number - 1][:price])}"
   end
 
+  def insert_money
+    print "Insert Money here:"
+    amountPaid = $stdin.gets.chomp.to_i
+    amountPaid = sprintf('%.2f',amountPaid)
+  end
+
 end

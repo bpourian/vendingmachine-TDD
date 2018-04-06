@@ -10,4 +10,9 @@ class VendingMachine
     end
   end
 
+  def select_snack(snack_number)
+    puts "Selection: #{@list_of_snacks[snack_number - 1][:name]}"+
+    " -- amount due: £#{sprintf('%.2f', @list_of_snacks[snack_number - 1][:price])}"
+  end
+
 end

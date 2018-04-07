@@ -25,7 +25,7 @@ describe VendingMachine do
     end
 
     it "Should prompt user to insert money" do
-      vendingmachine.select_snack(1)
+      allow(vendingmachine).to receive(:calculate_change)
       expect { vendingmachine.insert_money }.to output("Insert Money here:").to_stdout
     end
   end

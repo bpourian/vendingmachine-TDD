@@ -19,8 +19,7 @@ class VendingMachine
 
   def insert_money
     print "Insert Money here:"
-    amountPaid = $stdin.gets.chomp
-    @amount_paid = sprintf('%.2f',amountPaid)
+    calculate_change($stdin.gets.chomp.to_f)
   end
 
   def calculate_change(amount_paid = @amount_paid, snack_number = @snack_number)

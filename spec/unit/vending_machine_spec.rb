@@ -39,4 +39,10 @@ describe VendingMachine do
       expect(vendingmachine.calculate_change(0.4,1)).to eq "Amount due: £0.10"
     end
   end
+
+  describe '#load_snacks' do
+    it "Should be able to load snacks to vending machine" do
+      expect(vendingmachine.load_snacks(mock_snacks)).to eq([{name: "Walkers Crisps", price: 0.50}])
+    end
+  end
 end

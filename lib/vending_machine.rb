@@ -1,5 +1,4 @@
 class VendingMachine
-  attr_reader :snack_number, :amount_paid
 
   def initialize(list_of_snacks)
     @list_of_snacks = list_of_snacks;
@@ -26,5 +25,9 @@ class VendingMachine
     amount_paid -= (@list_of_snacks[snack_number - 1][:price])
     return "Your change: #{sprintf('%.2f',amount_paid)}" if amount_paid >= 0
     "Amount due: £#{sprintf('%.2f',amount_paid.abs())}"
+  end
+
+  def load_snacks(snacks)
+    @list_of_snacks = snacks
   end
 end

@@ -3,8 +3,8 @@ require './lib/vending_machine'
 describe VendingMachine do
 
   subject(:vendingmachine)          { described_class.new }
-  let(:mock_snacks)                 { [{name: "Walkers Crisps", price: 0.50}] }
-  let(:mock_change)                 { [{"1p": 0.01}, {"2p": 0.02}, {"5p": 0.05}] }
+  let(:mock_snacks)                 { [{ name: "Walkers Crisps", price: 0.50 }] }
+  let(:mock_change)                 { [{ "1p": 0.01 }, { "2p": 0.02 }, { "5p": 0.05 }] }
   let(:mock_print)                  { "1 Walkers Crisps -- £0.50\n" }
   let(:mock_selection_response)     { "Selection: Walkers Crisps -- amount due: £0.50\n" }
 
@@ -25,7 +25,7 @@ describe VendingMachine do
 
   describe '#insert_money' do
     before do
-    $stdin = StringIO.new("0.50")
+      $stdin = StringIO.new("0.50")
     end
 
     it "Should prompt user to insert money" do
@@ -40,23 +40,23 @@ describe VendingMachine do
     end
 
     it "Should return correct change" do
-      expect(vendingmachine.calculate_change(2,1)).to eq "Your change: 1.50"
+      expect(vendingmachine.calculate_change(2, 1)).to eq "Your change: 1.50"
     end
 
     it "Should prompt user for more money if insufficient amount paid" do
-      expect(vendingmachine.calculate_change(0.4,1)).to eq "Amount due: £0.10"
+      expect(vendingmachine.calculate_change(0.4, 1)).to eq "Amount due: £0.10"
     end
   end
 
   describe '#load_snacks' do
     it "Should be able to load snacks to vending machine" do
-      expect(vendingmachine.load_snacks(mock_snacks)).to eq([{name: "Walkers Crisps", price: 0.50}])
+      expect(vendingmachine.load_snacks(mock_snacks)).to eq([{ name: "Walkers Crisps", price: 0.50 }])
     end
   end
 
   describe '#load_change' do
     it "Should be able to load change to vending machine" do
-      expect(vendingmachine.load_change(mock_change)).to eq([{"1p": 0.01}, {"2p": 0.02}, {"5p": 0.05}])
+      expect(vendingmachine.load_change(mock_change)).to eq([{ "1p": 0.01 }, { "2p": 0.02 }, { "5p": 0.05 }])
     end
   end
 end

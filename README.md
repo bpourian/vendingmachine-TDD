@@ -46,16 +46,17 @@ I would like to be prompted with the correct amount I owe
 ```
 
 ```
+----------MVP V2----------
+
 As a User
 So that I can stock the vending machine
 I would like to load it with products
-```
 
-```
 As a User
 So that the vending machine can return change
 I would like to load it with change
 ```
+
 ```
 As a User
 So that I can see the vending machine products all the time

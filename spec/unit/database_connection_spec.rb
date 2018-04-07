@@ -11,8 +11,8 @@ describe DatabaseConnection do
   describe '#query' do
     it 'executes a query via PG' do
       connection = DatabaseConnection.connect('vending_machine_test')
-      expect(connection).to receive(:exec).with("SELECT * FROM snacks;")
-      DatabaseConnection.query("SELECT * FROM snacks;")
+      expect(connection).to receive(:exec).with("SELECT * FROM Snacks;")
+      DatabaseConnection.query("SELECT * FROM Snacks;")
     end
   end
 end

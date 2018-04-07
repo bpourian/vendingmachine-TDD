@@ -3,11 +3,10 @@ require 'pg'
 task :test_database_setup do
   p "Cleaning database..."
 
-  connection = PG.connect(dbname: 'vending_machine_test')
-  # Clear the database
-  connection.exec("TRUNCATE Snacks;")
-  connection.exec("TRUNCATE Change;")
-
+  con = PG.connect(dbname: 'vending_machine_test')
+  con.exec("TRUNCATE Snacks;")
+  # connection.exec("TRUNCATE Change;")
+  con.close if con
 end
 
 task :create_table_snacks do
@@ -19,6 +18,7 @@ task :create_table_snacks do
     con.exec "DROP TABLE IF EXISTS Snacks"
     con.exec "CREATE TABLE Snacks(Id INTEGER PRIMARY KEY,
         Product VARCHAR(20), Price INT);"
+    con.close if con
   end
 end
 
@@ -32,6 +32,7 @@ task :create_table_change do
     con.exec "CREATE TABLE Change(Id INTEGER PRIMARY KEY,
         Value VARCHAR(20), Quantity INT);"
   end
+  con.close if con
 end
 
 task :setup do
@@ -42,4 +43,5 @@ task :setup do
     con.exec "DROP DATABASE IF EXISTS #{ database }"
     con.exec("CREATE DATABASE #{ database };")
   end
+  con.close if con
 end

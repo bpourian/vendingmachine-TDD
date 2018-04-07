@@ -4,7 +4,7 @@ describe VendingMachine do
 
   subject(:vendingmachine)          { described_class.new }
   let(:mock_snacks)                 { [{ name: "Walkers Crisps", price: 0.50 }] }
-  let(:mock_change)                 { [{ "1p": 0.01 }, { "2p": 0.02 }, { "5p": 0.05 }] }
+  let(:mock_change)                 { [{ name: "1p", value: 0.01 }, { name: "2p", value: 0.02 }, { name: "5p", value: 0.05 }] }
   let(:mock_print)                  { "1 Walkers Crisps -- £0.50\n" }
   let(:mock_selection_response)     { "Selection: Walkers Crisps -- amount due: £0.50\n" }
 
@@ -56,7 +56,7 @@ describe VendingMachine do
 
   describe '#load_change' do
     it "Should be able to load change to vending machine" do
-      expect(vendingmachine.load_change(mock_change)).to eq([{ "1p": 0.01 }, { "2p": 0.02 }, { "5p": 0.05 }])
+      expect(vendingmachine.load_change(mock_change, 'vending_machine_test' )).to eq([{ name: "1p", value: 0.01 }, { name: "2p", value: 0.02 }, { name: "5p", value: 0.05 }])
     end
   end
 end

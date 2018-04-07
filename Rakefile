@@ -5,7 +5,7 @@ task :test_database_setup do
 
   con = PG.connect(dbname: 'vending_machine_test')
   con.exec("TRUNCATE Snacks;")
-  # connection.exec("TRUNCATE Change;")
+  con.exec("TRUNCATE Change;")
   con.close if con
 end
 
@@ -30,18 +30,20 @@ task :create_table_change do
 
     con.exec "DROP TABLE IF EXISTS Change"
     con.exec "CREATE TABLE Change(Id INTEGER PRIMARY KEY,
-        Value VARCHAR(20), Quantity INT);"
+        Name VARCHAR(20), Value INT);"
+    con.close if con
   end
-  con.close if con
+
 end
 
 task :setup do
-  p "Creating databases..."
+  p "Creating test and dev databases..."
 
   ['vending_machine_dev', 'vending_machine_test'].each do |database|
     con = PG.connect
     con.exec "DROP DATABASE IF EXISTS #{ database }"
     con.exec("CREATE DATABASE #{ database };")
+    con.close if con
   end
-  con.close if con
+
 end

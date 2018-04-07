@@ -34,5 +34,9 @@ describe VendingMachine do
     it "Should return correct change" do
       expect(vendingmachine.calculate_change(2,1)).to eq "Your change: 1.50"
     end
+
+    it "Should prompt user for more money if insufficient amount paid" do
+      expect(vendingmachine.calculate_change(0.4,1)).to eq "Amount due: £0.10"
+    end
   end
 end

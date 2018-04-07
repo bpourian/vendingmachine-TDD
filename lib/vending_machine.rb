@@ -25,6 +25,6 @@ class VendingMachine
   def calculate_change(amount_paid = @amount_paid, snack_number = @snack_number)
     amount_paid -= (@list_of_snacks[snack_number - 1][:price])
     return "Your change: #{sprintf('%.2f',amount_paid)}" if amount_paid >= 0
+    "Amount due: £#{sprintf('%.2f',amount_paid.abs())}"
   end
-
 end

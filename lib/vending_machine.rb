@@ -34,7 +34,6 @@ class VendingMachine
     position = 1
 
     snacks.each do |item|
-
       con.exec("INSERT INTO Snacks VALUES(#{position},'#{item[:name]}',#{item[:price]})")
       position += 1
     end
@@ -46,8 +45,8 @@ class VendingMachine
     database_name = database_name || 'vending_machine_dev'
     con = DatabaseConnection.connect(database_name)
     position = 1
-    change.each do |item|
 
+    change.each do |item|
       con.exec("INSERT INTO Change VALUES(#{position}, '#{item[:name]}', #{item[:value]})")
       position += 1
     end

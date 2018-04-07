@@ -40,7 +40,7 @@ $ rspec
 ```
 
 To interact with the code you will need to run a repl like `irb`.
-N.B. requires ruby version 2.4.1 and the bundler gem. 
+N.B. requires ruby version 2.4.1 and the bundler gem.
 
 User Stories
 ---------
@@ -89,20 +89,18 @@ I would like to load it with change
 As a User
 So that I can see the vending machine products all the time
 I would like to be able to reload the products at a later point
-```
-```
+
 As a User
 So that I can see how much change the vending machine contains all the time
 I would like to be able to reload the change at a later point
 ```
 
 ```
+----------MVP V4----------
 As a User
 So that I can see what products are remaining
 I would like to see quantity of each item
-```
 
-```
 As a User
 So that I can see how much change is left in the vending machine
 I would like to see list of change available

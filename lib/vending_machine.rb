@@ -28,4 +28,8 @@ class VendingMachine
   def load_snacks(snacks)
     @list_of_snacks = snacks
   end
+
+  def load_change(change)
+    @list_of_change = change
+  end
 end

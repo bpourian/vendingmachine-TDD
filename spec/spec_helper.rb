@@ -12,15 +12,6 @@ RSpec.configure do |config|
   end
 end
 
-
-# RSpec.configure do |config|
-#   config.before(:all) do
-#     Rake::Task['create_table_snacks'].execute
-#     Rake::Task['create_table_change'].execute
-#
-# end
-
-
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
 ])

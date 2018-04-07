@@ -83,7 +83,6 @@ As a User
 So that the vending machine can return change
 I would like to load it with change
 ```
-
 ```
 ----------MVP V3----------
 As a User

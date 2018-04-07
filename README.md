@@ -17,37 +17,29 @@ Please do not submit your code to Github or a publicly available repository. Jus
 User Stories
 ---------
 ```
+----------MVP V1----------
+
 As a User
 So that I can decide what I want from the vending machine
 I would like to be able to see list of items
-```
 
-```
 As a User
 So that I can interact with the vending machine
 I would like to be able to make a selection
 
-```
 
-```
 As a User
 So that I can pay the correct amount
 I would like to see how much my snack costs
-```
-```
+
 As a User
 So that I can purchase my snack
 I would like to pay for my snack
-```
 
-```
 As a User
 So that I am not owed any money
 I would like to receive the correct change
 
-```
-
-```
 As a User
 So that I know, if I have paid insufficient funds
 I would like to be prompted with the correct amount I owe

@@ -7,7 +7,7 @@ Brief Summary of Approach
 -------
 I chose Ruby to build this app, and used the pg gem to interact with a PostgreSQL database. I test drove the development using RSpec focusing on testing behaviour of my methods. This was my first time interacting with PostgreSQL using the `PG` gem and I found that I ran out of time and couldn't complete the full test.
 
-I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain 100% test coverage and cleaner syntax.
+I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain 100% test coverage and cleaner syntax. I have also setup Travis CI to build the application on every push. You can access this by clicking the build logo on the top left hand corner.
 
 In hindsight I would have taken a slightly different approach to storing data in my database and used DataMapper which I was more familiar with. However, I wanted to try something new and the `pg` gem is simple enough to use. But unfortunately I couldn't implement all the features as I ran out of time. I have managed to complete the features up to the user story where product data can be stored on the database.
 
@@ -107,3 +107,33 @@ As a User
 So that I can see how much change is left in the vending machine
 I would like to see list of change available
 ```
+
+Process
+---------
+* Whilst the test was very simple and considering I had made a lot of challenging applications in the past it
+was not easy to remain calm and not panic. I began by reading the spec and trying the write down the steps required to complete this challenge.
+
+* Once I had completed that and had a better idea of what I wanted to do, I began to diagram the classes I needed in my code and the methods within them (picture below). Although from experience I knew there was only so much diagraming I could have done at this stage.
+
+* Next I proceeded onto to writing out user stories and ensuring I had a good understanding of the requirements. I even sent an email to Alfred to clarify a particular question I had. At this point I also decided what my MVP was going to be, so I could have a milestone in mind and not panick if time was running out.
+
+* I test drove the development by writing failing test for the VendingMachine class and implemented each method in the TDD as I went along.
+
+* I started with very simple steps not to over complicate things with the view that I could refactor later and make additional changes required.
+
+* I regularly kept an eye on Rubocop and SimpleCov to ensure consistency of my code.
+
+* Once I had achieved my MVP V1 and V2 I was ready to start with the database. However, I was enjoying learning about the `pg` gem too much and failed to finish the test within allocated time.
+
+* Given more time I would have liked to completed the following;
+
+  - complete the storage of products
+  - complete the storage of change for the Vending Machine
+  - Setup a rake file to ensure the db is cleaned after every test along with migration and upgrade of the db
+
+* I would love to discuss my approach in more detail and talk about what I have done so far, thank you for looking at my code.
+
+Initial diagram
+----------
+
+![Screenshot-2](img/diagram.png)

@@ -2,8 +2,8 @@ require 'pg'
 
 class DatabaseConnection
 
-  def self.setup(database)
-    @connection = PG.connect(database)
+  def self.connect(database_name)
+    @connection = PG.connect :dbname => database_name
   end
 
   def self.query(sql)

@@ -1,3 +1,5 @@
+require_relative 'database_connection'
+
 class VendingMachine
 
   def print_snacks(list_of_snacks = @list_of_snacks)
@@ -27,9 +29,24 @@ class VendingMachine
 
   def load_snacks(snacks)
     @list_of_snacks = snacks
+    save_to_db("Snacks", snacks)
   end
 
   def load_change(change)
     @list_of_change = change
+  end
+
+  private
+
+  def save_to_db(table_name, item_list)
+      con = DatabaseConnection.connect('vending_machine_test')
+      con.exec "DROP TABLE IF EXISTS #{table_name}"
+      con.exec "CREATE TABLE #{table_name}(Id INTEGER PRIMARY KEY,
+          Product VARCHAR(20), Price INT)"
+
+      item_list.each do |item|
+        con.exec("INSERT INTO #{table_name} VALUES(1 , '#{item[:name]}', #{item[:price]})")
+      end
+
   end
 end

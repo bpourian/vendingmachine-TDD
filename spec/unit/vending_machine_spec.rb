@@ -11,14 +11,14 @@ describe VendingMachine do
 
   describe '#print_snacks' do
     it "Prints all available snacks in vending machine" do
-      vendingmachine.load_snacks(mock_snacks)
+      vendingmachine.load_snacks(mock_snacks, 'vending_machine_test')
       expect { vendingmachine.print_snacks }.to output(mock_print).to_stdout
     end
   end
 
   describe '#select_snack' do
     it "Should accept user selection" do
-      vendingmachine.load_snacks(mock_snacks)
+      vendingmachine.load_snacks(mock_snacks, 'vending_machine_test')
       expect { vendingmachine.select_snack(1) }.to output(mock_selection_response).to_stdout
     end
   end
@@ -36,7 +36,7 @@ describe VendingMachine do
 
   describe '#calculate_change' do
     before(:each) do
-      vendingmachine.load_snacks(mock_snacks)
+      vendingmachine.load_snacks(mock_snacks, 'vending_machine_test' )
     end
 
     it "Should return correct change" do
@@ -50,7 +50,7 @@ describe VendingMachine do
 
   describe '#load_snacks' do
     it "Should be able to load snacks to vending machine" do
-      expect(vendingmachine.load_snacks(mock_snacks)).to eq([{ name: "Walkers Crisps", price: 0.50 }])
+      expect(vendingmachine.load_snacks(mock_snacks, 'vending_machine_test')).to eq([{ name: "Walkers Crisps", price: 0.50 }])
     end
   end
 

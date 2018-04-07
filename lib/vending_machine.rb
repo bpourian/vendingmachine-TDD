@@ -28,8 +28,9 @@ class VendingMachine
     "Amount due: £#{sprintf('%.2f', amount_paid.abs())}"
   end
 
-  def load_snacks(snacks, database_name = 'vending_machine_test')
-    @list_of_snacks = snacks
+  def load_snacks(snacks, database_name)
+    database_name = database_name || 'vending_machine_dev'
+
     con = DatabaseConnection.connect(database_name)
 
     snacks.each do |item|
@@ -38,6 +39,7 @@ class VendingMachine
       position += 1
     end
     con.close if con
+    @list_of_snacks = snacks
   end
 
   def load_change(change)

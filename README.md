@@ -39,7 +39,8 @@ To test run 'rspec'
 $ rspec
 ```
 
-N.B. requires ruby version 2.4.1 and the bundler gem
+To interact with the code you will need to run a repl like `irb`.
+N.B. requires ruby version 2.4.1 and the bundler gem. 
 
 User Stories
 ---------
@@ -129,6 +130,7 @@ was not easy to remain calm and not panic. I began by reading the spec and tryin
   - complete the storage of products
   - complete the storage of change for the Vending Machine
   - Setup a rake file to ensure the db is cleaned after every test along with migration and upgrade of the db
+  - Finally I would like to have also created another class called the interface so the user could interact with
 
 * I would love to discuss my approach in more detail and talk about what I have done so far, thank you for looking at my code.
 

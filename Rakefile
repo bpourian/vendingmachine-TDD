@@ -17,7 +17,7 @@ task :create_table_snacks do
 
     con.exec "DROP TABLE IF EXISTS Snacks"
     con.exec "CREATE TABLE Snacks(Id INTEGER PRIMARY KEY,
-        Product VARCHAR(20), Price INT);"
+        Product VARCHAR(20), Price FLOAT);"
     con.close if con
   end
 end
@@ -30,7 +30,7 @@ task :create_table_change do
 
     con.exec "DROP TABLE IF EXISTS Change"
     con.exec "CREATE TABLE Change(Id INTEGER PRIMARY KEY,
-        Name VARCHAR(20), Value INT);"
+        Name VARCHAR(20), Value FLOAT);"
     con.close if con
   end
 

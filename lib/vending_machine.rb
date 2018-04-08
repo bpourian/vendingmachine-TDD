@@ -3,11 +3,19 @@ require_relative './database_connection'
 
 class VendingMachine
 
-  def print_snacks(list_of_snacks = @list_of_snacks)
-    return "Snack Machine empty" if list_of_snacks.nil?
+  def initialize
+    @list_of_snacks = []
+  end
 
-    list_of_snacks.each do |item|
-      puts "#{list_of_snacks.index(item)+1} #{item[:name]} -- £#{sprintf('%.2f', item[:price])}"
+  def print_snacks(all_snacks = load_snacks_from_db())
+
+     if all_snacks.nil?
+      puts "Snack Machine empty"
+      return
+     end
+
+    all_snacks.each do |item|
+      puts "#{item["id"]} #{item["product"]} -- £#{sprintf('%.2f', item["price"])}"
     end
   end
 
@@ -34,11 +42,10 @@ class VendingMachine
     position = 1
 
     snacks.each do |item|
-      con.exec("INSERT INTO Snacks VALUES(#{position},'#{item[:name]}',#{item[:price]})")
+      con.exec("INSERT INTO Snacks VALUES(#{position},'#{item[:product]}',#{item[:price].to_f})")
       position += 1
     end
     con.close if con
-    @list_of_snacks = snacks
   end
 
   def load_change(change, database_name)
@@ -56,8 +63,16 @@ class VendingMachine
 
   private
 
-  def load_snacks_from_db(database_name = 'vending_machine_dev')
+  def load_snacks_from_db(database_name = 'vending_machine_test')
     DatabaseConnection.connect(database_name)
-    result = DatabaseConnection.query("SELECT * FROM Snacks")
+    result = DatabaseConnection.query("SELECT * FROM Snacks;")
+
+    return nil if result.num_tuples.zero?
+
+    result.each do |row|
+      @list_of_snacks << row
+    end
+    @list_of_snacks
   end
+
 end

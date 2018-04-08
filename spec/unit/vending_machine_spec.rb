@@ -63,7 +63,11 @@ describe VendingMachine do
 
   describe '#load_change_to_db' do
     it "Should be able to load change to vending machine" do
-      expect(vendingmachine.load_change_to_db(mock_change, 'vending_machine_test' )).to eq([{ name: "1p", value: 0.01 }, { name: "2p", value: 0.02 }, { name: "5p", value: 0.05 }])
+      vendingmachine.load_change_to_db(mock_change, 'vending_machine_test')
+      con = DatabaseConnection.connect('vending_machine_test')
+      result = DatabaseConnection.query("SELECT * FROM Change;")
+
+      expect(result.num_tuples).to eq(3)
     end
   end
 end

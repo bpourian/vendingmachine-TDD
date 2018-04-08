@@ -58,7 +58,6 @@ class VendingMachine
       position += 1
     end
     con.close if con
-    @list_of_change = change
   end
 
   private

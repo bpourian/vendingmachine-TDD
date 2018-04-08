@@ -56,7 +56,7 @@ class VendingMachine
 
   private
 
-  def list_of_snacks(database_name = 'vending_machine_dev')
+  def load_snacks_from_db(database_name = 'vending_machine_dev')
     DatabaseConnection.connect(database_name)
     result = DatabaseConnection.query("SELECT * FROM Snacks")
   end

@@ -36,8 +36,7 @@ class VendingMachine
     "Amount due: £#{sprintf('%.2f', amount_paid.abs())}"
   end
 
-  def load_snacks_to_db(snacks, database_name)
-    database_name = database_name || 'vending_machine_dev'
+  def load_snacks_to_db(snacks, database_name = 'vending_machine_dev')
     con = DatabaseConnection.connect(database_name)
     position = 1
 
@@ -62,7 +61,7 @@ class VendingMachine
 
   private
 
-  def load_snacks_from_db(database_name = 'vending_machine_test')
+  def load_snacks_from_db(database_name = 'vending_machine_dev')
     DatabaseConnection.connect(database_name)
     result = DatabaseConnection.query("SELECT * FROM Snacks;")
 

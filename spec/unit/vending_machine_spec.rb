@@ -4,6 +4,7 @@ describe VendingMachine do
 
   subject(:vendingmachine)          { described_class.new }
   let(:mock_snacks)                 { [{ product: "Walkers Crisps", price: 0.50 }] }
+  let(:mock_snacks_two)             { [{ "id" => 1, "product" => "Walkers Crisps", "price" => 0.50 }] }
   let(:mock_change)                 { [{ name: "1p", value: 0.01 }, { name: "2p", value: 0.02 }, { name: "5p", value: 0.05 }] }
   let(:mock_print)                  { "1 Walkers Crisps -- £0.50\n" }
   let(:mock_selection_response)     { "Selection: Walkers Crisps -- amount due: £0.50\n" }
@@ -11,9 +12,7 @@ describe VendingMachine do
 
   describe '#print_snacks' do
     it "Prints all available snacks in vending machine" do
-      vendingmachine.load_snacks_to_db(mock_snacks, 'vending_machine_test')
-
-      expect { vendingmachine.print_snacks }.to output(mock_print).to_stdout
+      expect { vendingmachine.print_snacks(mock_snacks_two) }.to output(mock_print).to_stdout
     end
   end
 

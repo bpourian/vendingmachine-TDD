@@ -1,11 +1,11 @@
 Vending-Machine Tech Test (Onfido)
 ==================
-[![Build Status](https://travis-ci.com/bpourian/vending-machine.svg?token=pbZE7sGYsn5RyUv9ZzzN&branch=master)](https://travis-ci.com/bpourian/vending-machine)
+[![Build Status](https://travis-ci.com/bpourian/vending-machine-2.svg?token=pbZE7sGYsn5RyUv9ZzzN&branch=master)](https://travis-ci.com/bpourian/vending-machine-2)
 
 
 Brief Summary of Approach
 -------
-I chose Ruby to build this app, and used the pg gem to interact with a PostgreSQL database. I test drove the development using RSpec focusing on testing behaviour of my methods. This was my first time interacting with PostgreSQL using the `PG` gem and I found that I ran out of time and couldn't complete the full test.
+I chose Ruby to build this app, and used the `pg` gem to interact with a PostgreSQL database. I test drove the development using RSpec focusing on testing behaviour of my methods. This was my first time interacting with PostgreSQL using the `PG` gem and I found that I ran out of time and couldn't complete the full test.
 
 I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain 100% test coverage and cleaner syntax. I have also setup Travis CI to build the application on every push. You can access this by clicking the build logo on the top left hand corner.
 
@@ -28,18 +28,31 @@ Run 'bundle' to ensure you have all the libraries
 ```
 $ bundle
 ```
-
-You will need to create a local databases 'vending_machine_test' and 'vending_machine_dev' in PostgreSQL and create the required tables using:
+Create your databases by running the command(assuming you have PostgreSQL installed already)
 ```
-$ CREATE TABLE ratings(Id INTEGER PRIMARY KEY, Product VARCHAR(20), Price INT);
+$ rake setup
 ```
-
-To test run 'rspec'
+This will create two databases one for test and the other for dev environment. Once that's done it will also create
+the relevant tables with correct data columns
+Easiest way to confirm setup is to run RSpec
 ```
 $ rspec
 ```
+You should see all tests green
 
-To interact with the code you will need to run a repl like `irb`.
+To use the app:
+```
+$ irb
+
+2.4.1 :001 > require './app'
+
+```
+To see available commands simply type following in `irb`
+```
+2.4.1 :002 > show_commands
+```
+This will print commands available to you at this stage of development
+
 N.B. requires ruby version 2.4.1 and the bundler gem.
 
 User Stories

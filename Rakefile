@@ -57,5 +57,4 @@ task :setup do
 
   Rake::Task[:create_table_snacks].invoke
   Rake::Task[:create_table_change].invoke
-
 end

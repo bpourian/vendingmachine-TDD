@@ -1,7 +1,7 @@
 require 'pg'
 
 task :test_database_setup do
-  p "Cleaning database..."
+  # p "Cleaning database..."
 
   con = PG.connect(dbname: 'vending_machine_test')
   con.exec("TRUNCATE Snacks;")

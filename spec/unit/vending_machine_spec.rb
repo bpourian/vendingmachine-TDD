@@ -35,16 +35,17 @@ describe VendingMachine do
   end
 
   describe '#calculate_change' do
-    before(:each) do
-      vendingmachine.load_snacks(mock_snacks, 'vending_machine_test' )
-    end
 
     it "Should return correct change" do
-      expect(vendingmachine.calculate_change(2, 1)).to eq "Your change: 1.50"
+      snack_price_mock = 0.5
+      amount_paid_mock = 2
+      expect(vendingmachine.calculate_change(amount_paid_mock, snack_price_mock)).to eq "Your change: 1.50"
     end
 
     it "Should prompt user for more money if insufficient amount paid" do
-      expect(vendingmachine.calculate_change(0.4, 1)).to eq "Amount due: £0.10"
+      snack_price_mock = 0.5
+      amount_paid_mock = 0.4
+      expect(vendingmachine.calculate_change(amount_paid_mock, snack_price_mock)).to eq "Amount due: £0.10"
     end
   end
 

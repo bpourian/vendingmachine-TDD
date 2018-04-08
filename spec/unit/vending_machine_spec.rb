@@ -12,15 +12,14 @@ describe VendingMachine do
   describe '#print_snacks' do
     it "Prints all available snacks in vending machine" do
       vendingmachine.load_snacks(mock_snacks, 'vending_machine_test')
-      
+
       expect { vendingmachine.print_snacks }.to output(mock_print).to_stdout
     end
   end
 
   describe '#select_snack' do
     it "Should accept user selection" do
-      vendingmachine.load_snacks(mock_snacks, 'vending_machine_test')
-      expect { vendingmachine.select_snack(1) }.to output(mock_selection_response).to_stdout
+      expect { vendingmachine.select_snack(1, mock_snacks) }.to output(mock_selection_response).to_stdout
     end
   end
 

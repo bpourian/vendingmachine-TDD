@@ -20,20 +20,22 @@ class VendingMachine
   end
 
   def select_snack(snack_number, snack_list = @list_of_snacks)
-    @snack_price = snack_list[snack_number - 1][:"price"]
-    puts "Selection: #{snack_list[snack_number - 1][:"product"]}"+
-    " -- amount due: £#{sprintf('%.2f', snack_list[snack_number - 1][:"price"])}"
+    @snack_price = snack_list[snack_number - 1]["price"]
+    puts "Selection: #{snack_list[snack_number - 1]["product"]}"+
+    " -- amount due: £#{sprintf('%.2f', snack_list[snack_number - 1]["price"])}"
   end
 
   def insert_money
     print "Insert Money here:"
-    calculate_change($stdin.gets.chomp.to_f)
+    money = $stdin.gets.chomp
+    calculate_change(money.to_f)
   end
 
   def calculate_change(amount_paid , snack_price = @snack_price)
-    amount_paid -= snack_price
+    amount_paid -= snack_price.to_f
     return "Your change: #{sprintf('%.2f', amount_paid)}" if amount_paid >= 0
     "Amount due: £#{sprintf('%.2f', amount_paid.abs())}"
+    # loop needs to be added here
   end
 
   def load_snacks_to_db(snacks, database_name = 'vending_machine_dev')

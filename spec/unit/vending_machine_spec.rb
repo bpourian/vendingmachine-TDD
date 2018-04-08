@@ -3,7 +3,7 @@ require './lib/vending_machine'
 describe VendingMachine do
 
   subject(:vendingmachine)          { described_class.new }
-  let(:mock_snacks)                 { [{ product: "Walkers Crisps", price: 0.50 }] }
+  let(:mock_snacks)                 { [{ "product" => "Walkers Crisps", "price" => 0.50 }] }
   let(:mock_snacks_two)             { [{ "id" => 1, "product" => "Walkers Crisps", "price" => 0.50 }] }
   let(:mock_change)                 { [{ name: "1p", value: 0.01 }, { name: "2p", value: 0.02 }, { name: "5p", value: 0.05 }] }
   let(:mock_print)                  { "1 Walkers Crisps -- £0.50\n" }

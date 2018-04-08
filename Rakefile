@@ -9,6 +9,15 @@ task :test_database_setup do
   con.close if con
 end
 
+task :dev_database_setup do
+  # p "Cleaning database..."
+
+  con = PG.connect(dbname: 'vending_machine_dev')
+  con.exec("TRUNCATE Snacks;")
+  con.exec("TRUNCATE Change;")
+  con.close if con
+end
+
 task :create_table_snacks do
   p "creating snacks table..."
 

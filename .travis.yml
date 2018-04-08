@@ -1,11 +1,11 @@
 rvm: '2.4.1'
 
-script:
-  - mkdir -p spec && bundle exec rspec spec
-
 services:
   - postgresql
 
 before_script:
   - psql -c 'create database vending_machine_test;' -U postgres
   
+
+script:
+  - mkdir -p spec && bundle exec rspec spec

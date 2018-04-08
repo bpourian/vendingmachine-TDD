@@ -11,6 +11,8 @@ I used Rubocop static code analyzer and SimpleCov code coverage analysis tool fo
 
 In hindsight I would have taken a slightly different approach to storing data in my database and used DataMapper which I was more familiar with. However, I wanted to try something new and the `pg` gem is simple enough to use. But unfortunately I couldn't implement all the features as I ran out of time. I have managed to complete the features up to the user story where product data can be stored on the database.
 
+The second vending-machine-2 is failing the build test on Travis at the moment due the the changes I've made in RSpec so that the database is cleared after each test. I didn't have sufficient time to debug. However, the first version passes all tests on Travis.
+
 See more on my approach <a href='#process'>below</a>.
 
 Instructions
@@ -47,7 +49,7 @@ $ irb
 2.4.1 :001 > require './app'
 
 ```
-To see available commands simply type following in `irb`
+To see available commands simply type the following in `irb`
 ```
 2.4.1 :002 > show_commands
 ```

@@ -11,7 +11,7 @@ describe VendingMachine do
 
   describe '#print_snacks' do
     it "Prints all available snacks in vending machine" do
-      vendingmachine.load_snacks(mock_snacks, 'vending_machine_test')
+      vendingmachine.load_snacks_to_db(mock_snacks, 'vending_machine_test')
 
       expect { vendingmachine.print_snacks }.to output(mock_print).to_stdout
     end
@@ -49,15 +49,21 @@ describe VendingMachine do
     end
   end
 
-  describe '#load_snacks' do
+  describe '#load_snacks_to_db' do
     it "Should be able to load snacks to vending machine" do
-      expect(vendingmachine.load_snacks(mock_snacks, 'vending_machine_test')).to eq([{ name: "Walkers Crisps", price: 0.50 }])
+      vendingmachine.load_snacks_to_db(mock_snacks, 'vending_machine_test')
+      con = DatabaseConnection.connect('vending_machine_test')
+      result = DatabaseConnection.query("SELECT * FROM Snacks;")
+
+      expect(result.num_tuples).to eq(1)
+
+      con.close if con
     end
   end
 
-  describe '#load_change' do
+  describe '#load_change_to_db' do
     it "Should be able to load change to vending machine" do
-      expect(vendingmachine.load_change(mock_change, 'vending_machine_test' )).to eq([{ name: "1p", value: 0.01 }, { name: "2p", value: 0.02 }, { name: "5p", value: 0.05 }])
+      expect(vendingmachine.load_change_to_db(mock_change, 'vending_machine_test' )).to eq([{ name: "1p", value: 0.01 }, { name: "2p", value: 0.02 }, { name: "5p", value: 0.05 }])
     end
   end
 end

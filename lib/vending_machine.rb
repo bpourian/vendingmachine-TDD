@@ -36,7 +36,7 @@ class VendingMachine
     "Amount due: £#{sprintf('%.2f', amount_paid.abs())}"
   end
 
-  def load_snacks(snacks, database_name)
+  def load_snacks_to_db(snacks, database_name)
     database_name = database_name || 'vending_machine_dev'
     con = DatabaseConnection.connect(database_name)
     position = 1
@@ -48,7 +48,7 @@ class VendingMachine
     con.close if con
   end
 
-  def load_change(change, database_name)
+  def load_change_to_db(change, database_name)
     database_name = database_name || 'vending_machine_dev'
     con = DatabaseConnection.connect(database_name)
     position = 1

@@ -55,4 +55,7 @@ task :setup do
     con.close if con
   end
 
+  Rake::Task[:create_table_snacks].invoke
+  Rake::Task[:create_table_change].invoke
+
 end

@@ -53,4 +53,11 @@ class VendingMachine
     con.close if con
     @list_of_change = change
   end
+
+  private
+
+  def list_of_snacks(database_name = 'vending_machine_dev')
+    DatabaseConnection.connect(database_name)
+    result = DatabaseConnection.query("SELECT * FROM Snacks")
+  end
 end

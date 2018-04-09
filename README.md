@@ -20,11 +20,11 @@ Instructions
 
 Clone this repository in your directory
 ```
-$ git clone https://github.com/bpourian/vending-machine.git
+$ git clone https://github.com/bpourian/vending-machine-2.git
 ```
 Change directory
 ```
-$ cd vending-machine
+$ cd vending-machine-2
 ```
 Run 'bundle' to ensure you have all the libraries
 ```

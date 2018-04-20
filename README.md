@@ -135,7 +135,9 @@ Approach
 
 Improvements
 ------
-* I created a
+* I am not entirely happy with feature test for Interface class. I feel that I have some redundant tests. I Would say this is an area which I need to learn more about. Main point I need to look at is the behaviours the particular methods in this class perform. At this stage they are delegating and passing messages on. Since the underlying code which is being injected in from the VendingMachine class has already been tested having additional tests can seem a bit redundant.
+
+* I introduced Travis CI but was failing to get it to create the correct tables and hence my tests were failing on Travis. Given more time I would like to debug this and make sure that the correct table is created at the beginning of each test.
 
 Initial diagram
 ----------

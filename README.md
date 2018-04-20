@@ -1,7 +1,6 @@
 Vending-Machine Tech Test (Onfido)
 ==================
-[![Build Status](https://travis-ci.com/bpourian/vending-machine-2.svg?token=pbZE7sGYsn5RyUv9ZzzN&branch=master)](https://travis-ci.com/bpourian/vending-machine-2)
-
+[![Build Status](https://travis-ci.org/bpourian/vendingmachine-TDD.svg?branch=master)](https://travis-ci.org/bpourian/vendingmachine-TDD)
 
 Brief Summary of Approach
 -------

@@ -1,12 +1,11 @@
 Vending-Machine Tech Test (Onfido)
 ==================
-[![Build Status](https://travis-ci.org/bpourian/vendingmachine-TDD.svg?branch=master)](https://travis-ci.org/bpourian/vendingmachine-TDD)
 
 Brief Summary of Approach
 -------
 I chose Ruby to build this app, and used the `pg` gem to interact with a PostgreSQL database. I test drove the development using RSpec focusing on testing behaviour of my methods.
 
-I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain 100% test coverage and cleaner syntax. I have also setup Travis CI to build the application on every push. You can access this by clicking the build logo on the top left hand corner.
+I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain 100% test coverage and cleaner syntax.
 
 See more on my approach <a href='#approach'>below</a>.
 
@@ -137,7 +136,7 @@ Improvements
 ------
 * I am not entirely happy with feature test for Interface class. I feel that I have some redundant tests. I Would say this is an area which I need to learn more about. Main point I need to look at is the behaviours the particular methods in this class perform. At this stage they are delegating and passing messages on. Since the underlying code which is being injected in from the VendingMachine class has already been tested having additional tests can seem a bit redundant.
 
-* I introduced Travis CI but was failing to get it to create the correct tables and hence my tests were failing on Travis. Given more time I would like to debug this and make sure that the correct table is created at the beginning of each test.
+* I introduced Travis CI but was failing to get it to create the correct tables and my builds were failing on Travis. Given more time I would like to debug this and make sure that the correct table is created at the beginning of each test.
 
 Initial diagram
 ----------

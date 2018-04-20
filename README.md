@@ -5,7 +5,7 @@ Brief Summary of Approach
 -------
 I chose Ruby to build this app, and used the `pg` gem to interact with a PostgreSQL database. I test drove the development using RSpec focusing on testing behaviour of my methods.
 
-I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain 100% test coverage and cleaner syntax.
+I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain high percentage test coverage and cleaner syntax.
 
 See more on my approach <a href='#approach'>below</a>.
 

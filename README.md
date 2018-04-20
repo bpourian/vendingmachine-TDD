@@ -119,29 +119,24 @@ I would like to see list of change available
 
 Approach
 ---------
-* Whilst the test was very simple and considering I had made a lot of challenging applications in the past it
-was not easy to remain calm and not panic. I began by reading the spec and trying the write down the steps required to complete this challenge.
+* I began by outlining the general requirements  in bullet point format and writing down the names of some of the gems and tools required to complete this application.
 
 * Once I had completed that and had a better idea of what I wanted to do, I began to diagram the classes I needed in my code and the methods within them (picture below). Although from experience I knew there was only so much diagraming I could have done at this stage.
 
-* Next I proceeded onto to writing out user stories and ensuring I had a good understanding of the requirements. I even sent an email to Alfred to clarify a particular question I had. At this point I also decided what my MVP was going to be, so I could have a milestone in mind and not panick if time was running out.
+* Next I proceeded onto to writing out user stories and ensuring I had a good understanding of the requirements. At this point I had decided what my MVP was going to be, so I could have a milestone in mind.
 
-* I test drove the development by writing failing test for the VendingMachine class and implemented each method in the TDD as I went along.
+* I test drove the development by writing failing tests for the VendingMachine class and implemented each method in the TDD as I went along.
 
 * I started with very simple steps not to over complicate things with the view that I could refactor later and make additional changes required.
 
 * I regularly kept an eye on Rubocop and SimpleCov to ensure consistency of my code.
 
-* Once I had achieved my MVP V1 and V2 I was ready to start with the database. However, I was enjoying learning about the `pg` gem too much and failed to finish the test within allocated time.
+* Once I had achieved my MVP V1 and V2 I was ready to start with the database.
 
-* Given more time I would have liked to completed the following;
 
-  - complete the storage of products
-  - complete the storage of change for the Vending Machine
-  - Setup a rake file to ensure the db is cleaned after every test along with migration and upgrade of the db
-  - Finally I would like to have also created another class called the interface so the user could interact with
-
-* I would love to discuss my approach in more detail and talk about what I have done so far, thank you for looking at my code.
+Improvements
+------
+* I created a
 
 Initial diagram
 ----------

@@ -116,7 +116,7 @@ So that I can see how much change is left in the vending machine
 I would like to see list of change available
 ```
 
-Approach
+# Approach
 ---------
 * I began by outlining the general requirements  in bullet point format and writing down the names of some of the gems and tools required to complete this application.
 

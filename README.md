@@ -5,15 +5,11 @@ Vending-Machine Tech Test (Onfido)
 
 Brief Summary of Approach
 -------
-I chose Ruby to build this app, and used the `pg` gem to interact with a PostgreSQL database. I test drove the development using RSpec focusing on testing behaviour of my methods. This was my first time interacting with PostgreSQL using the `PG` gem and I found that I ran out of time and couldn't complete the full test.
+I chose Ruby to build this app, and used the `pg` gem to interact with a PostgreSQL database. I test drove the development using RSpec focusing on testing behaviour of my methods.
 
 I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain 100% test coverage and cleaner syntax. I have also setup Travis CI to build the application on every push. You can access this by clicking the build logo on the top left hand corner.
 
-In hindsight I would have taken a slightly different approach to storing data in my database and used DataMapper which I was more familiar with. However, I wanted to try something new and the `pg` gem is simple enough to use. But unfortunately I couldn't implement all the features as I ran out of time. I have managed to complete the features up to the user story where product data can be stored on the database.
-
-The second vending-machine-2 is failing the build test on Travis at the moment due the the changes I've made in RSpec so that the database is cleared after each test. I didn't have sufficient time to debug. However, the first version passes all tests on Travis.
-
-See more on my approach <a href='#process'>below</a>.
+See more on my approach <a href='#Approach'>below</a>.
 
 Instructions
 -------
@@ -121,7 +117,7 @@ So that I can see how much change is left in the vending machine
 I would like to see list of change available
 ```
 
-Process
+Approach
 ---------
 * Whilst the test was very simple and considering I had made a lot of challenging applications in the past it
 was not easy to remain calm and not panic. I began by reading the spec and trying the write down the steps required to complete this challenge.

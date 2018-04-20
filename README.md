@@ -8,7 +8,7 @@ I chose Ruby to build this app, and used the `pg` gem to interact with a Postgre
 
 I used Rubocop static code analyzer and SimpleCov code coverage analysis tool for Ruby to maintain 100% test coverage and cleaner syntax. I have also setup Travis CI to build the application on every push. You can access this by clicking the build logo on the top left hand corner.
 
-See more on my approach <a href='#Approach'>below</a>.
+See more on my approach <a href='#approach'>below</a>.
 
 Instructions
 -------
@@ -116,7 +116,7 @@ So that I can see how much change is left in the vending machine
 I would like to see list of change available
 ```
 
-# Approach
+Approach
 ---------
 * I began by outlining the general requirements  in bullet point format and writing down the names of some of the gems and tools required to complete this application.
 

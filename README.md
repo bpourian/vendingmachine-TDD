@@ -1,4 +1,4 @@
-Vending-Machine Tech Test (Onfido)
+Vending-Machine
 ==================
 
 Brief Summary of Approach
